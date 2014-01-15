@@ -266,6 +266,54 @@ configs =
 			bundleScriptPath: __dirname+'/scripts/bundled/html5/native.history.js'
 		}
 
+		# -----------------------------
+		# CommonJS
+
+		{
+			# Options
+			name: 'html4+html5+cjs'
+			watch: options.watch
+
+			# Paths
+			srcPath: __dirname+'/scripts/uncompressed'
+
+			# Compression (without outPath only the generated bundle files are compressed)
+			compressScripts: options.compress # Array or true or false
+
+			# Order
+			scriptsOrder: [
+				'json2.js'
+				'history.adapter.native.js'
+				'history.html4.js'
+				'history.js'
+				'history.exports.js'
+			]
+
+			# Bundling
+			bundleScriptPath: __dirname+'/scripts/bundled/html4+html5/native.cjs.history.js'
+		}
+		{
+			# Options
+			name: 'html5+native+cjs'
+			watch: options.watch
+
+			# Paths
+			srcPath: __dirname+'/scripts/uncompressed'
+
+			# Compression (without outPath only the generated bundle files are compressed)
+			compressScripts: options.compress # Array or true or false
+
+			# Order
+			scriptsOrder: [
+				'history.adapter.native.js'
+				'history.js'
+				'history.exports.js'
+			]
+
+			# Bundling
+			bundleScriptPath: __dirname+'/scripts/bundled/html5/native.cjs.history.js'
+		}
+
 
 		# -----------------------------
 		# RIGHT.JS
